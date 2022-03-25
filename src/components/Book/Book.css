@@ -5,3 +5,6 @@
 .btn-style{
     background-color: palevioletred;
 }
+.btn-style:hover{
+    background-image: linear-gradient(pink ,rgb(180, 61, 180));
+}

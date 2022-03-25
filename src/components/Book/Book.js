@@ -3,8 +3,8 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import './Book.css'
 
-const Book = (props) => {
-    const { name, category, price, pages, writer, img, published, language } = props.book;
+const Book = ({ book, HandleCart }) => {
+    const { name, category, price, pages, writer, img, published, language } = book;
     return (
         <div className='col'>
             <div className='card h-100 style'>
@@ -18,9 +18,7 @@ const Book = (props) => {
                     <p>Language: {language}</p>
                     <h5 className='fw-bold'>Price : ${price}</h5>
                 </div>
-                <div className='card-footer d-flex justify-content-around'>
-                    <button>Add To Cart <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
-                </div>
+                <button onClick={() => HandleCart(book)} className='btn-style py-2 border-0'>Add To Cart <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
             </div>
         </div>
     );
