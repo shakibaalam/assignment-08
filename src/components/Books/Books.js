@@ -1,16 +1,17 @@
-
 import React, { useEffect, useState } from 'react';
-import './Cards.css'
+import './Books.css'
 import Book from '../Book/Book';
 import Cart from '../Cart/Cart';
+import { Alert } from 'react-bootstrap';
 
-const Cards = () => {
+const Books = () => {
     const [books, setBooks] = useState([]);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setBooks(data));
     }, []);
+    // adding to the cart
     const [cart, setCart] = useState([]);
     const HandleCart = (selectedBook) => {
         if (cart.length < 4) {
@@ -21,11 +22,15 @@ const Cards = () => {
             }
         }
     }
+    // delete data of cart for choose again
     const DeleteAll = () => {
         setCart([]);
     }
+    // randomly select one book among 4
     const ChooseOne = () => {
-
+        const randBook = cart[Math.floor(Math.random() * cart.length)];
+        const newCart = [randBook];
+        setCart(newCart);
     }
 
     return (
@@ -43,9 +48,10 @@ const Cards = () => {
                         }
                     </div>
                 </div>
+
                 <div className='col-md-3 col-5'>
                     <div className='select-style'>
-                        <h4 className='fw-bold'>Selected Books: {cart.length}</h4>
+                        <h4 className='fw-bold my-4'>Selected Books: {cart.length}</h4>
                         {
                             cart.map(item => <Cart key={item.id} item={item}></Cart>)
                         }
@@ -61,4 +67,4 @@ const Cards = () => {
     );
 };
 
-export default Cards;
+export default Books;
