@@ -19,6 +19,12 @@ const Books = () => {
                 const newcart = [...cart, selectedBook];
                 setCart(newcart);
             }
+            else {
+                alert('This Cart has already been added.')
+            }
+        }
+        else {
+            alert("You can't added more.")
         }
     }
     // delete data of cart for choose again
