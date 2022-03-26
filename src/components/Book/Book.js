@@ -7,7 +7,7 @@ const Book = ({ book, HandleCart }) => {
     const { name, category, price, pages, writer, img, published, language } = book;
     return (
         <div className='col'>
-            <div className='card h-100 style'>
+            <div className='card h-100 card-style'>
                 <img src={img} className="card-img-top w-50 m-auto mt-5 mb-3" alt="" />
                 <div className='card-body'>
                     <h5 className='card-title fw-bold'> {name}</h5>

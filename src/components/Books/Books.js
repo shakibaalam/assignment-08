@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Books.css'
 import Book from '../Book/Book';
 import Cart from '../Cart/Cart';
-import { Alert } from 'react-bootstrap';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
