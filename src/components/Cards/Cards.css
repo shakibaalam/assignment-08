@@ -2,6 +2,10 @@
 .story{
     color: pink;
 }
+
 .select-style{
-    background-color: rgb(241, 181, 192);
+    background-color: rgb(241, 181, 192); 
+    position: sticky;
+    top: 0;
+    padding: 10px;
 }

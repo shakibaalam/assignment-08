@@ -18,10 +18,10 @@ const Cards = () => {
     }
 
     return (
-        <div className='container'>
-            <h1 className='text-center text-white mb-5'> The <span className='story'>........Story........</span> Keeper</h1>
+        <div className=''>
+            <h1 className='text-center mb-5 fw-bold'> The <span className='story'>........Story........</span> Keeper</h1>
             <div className='row'>
-                <div className="col-9 col-sm-8">
+                <div className=" col-md-9 col-7">
                     <div className='row row-cols-1 row-cols-md-3 g-5'>
                         {
                             books.map(book => <Book
@@ -32,9 +32,9 @@ const Cards = () => {
                         }
                     </div>
                 </div>
-                <div className='col-3 col-sm-4'>
-                    <div className=' select-style'>
-                        <h2 className='text-white'>Selected Items {cart.length}</h2>
+                <div className='col-md-3 col-5'>
+                    <div className='select-style'>
+                        <h2>Selected Items {cart.length}</h2>
                         {
                             cart.map(item => <Cart key={item.id} item={item}></Cart>)
                         }

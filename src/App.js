@@ -4,7 +4,7 @@ import Cards from './components/Cards/Cards';
 
 function App() {
   return (
-    <div className='bg-dark'>
+    <div className='container'>
       <Cards></Cards>
     </div>
   );
