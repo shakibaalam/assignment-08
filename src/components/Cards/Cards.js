@@ -13,8 +13,19 @@ const Cards = () => {
     }, []);
     const [cart, setCart] = useState([]);
     const HandleCart = (selectedBook) => {
-        const newcart = [...cart, selectedBook];
-        setCart(newcart);
+        if (cart.length < 4) {
+            const added = cart.find(item => item.id === selectedBook.id);
+            if (!added) {
+                const newcart = [...cart, selectedBook];
+                setCart(newcart);
+            }
+        }
+    }
+    const DeleteAll = () => {
+        setCart([]);
+    }
+    const ChooseOne = () => {
+
     }
 
     return (
@@ -34,11 +45,16 @@ const Cards = () => {
                 </div>
                 <div className='col-md-3 col-5'>
                     <div className='select-style'>
-                        <h2>Selected Items {cart.length}</h2>
+                        <h4 className='fw-bold'>Selected Books: {cart.length}</h4>
                         {
                             cart.map(item => <Cart key={item.id} item={item}></Cart>)
                         }
+                        <div>
+                            <button onClick={ChooseOne} className='d-block my-3 btn-style py-2 border-0'>Choose For Me</button>
+                            <button onClick={DeleteAll} className='btn-style py-2 border-0'>Choose Again</button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

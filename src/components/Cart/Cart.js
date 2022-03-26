@@ -1,7 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Cart = ({ item }) => {
-    console.log(item);
     return (
         <div className="card mb-3  style">
             <div className="row g-5">
